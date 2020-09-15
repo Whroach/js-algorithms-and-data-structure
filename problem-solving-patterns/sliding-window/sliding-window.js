@@ -12,25 +12,30 @@ The function should calculate the maximum sum of n consecutive elements in the a
 */
 
 
+//does not need to be sorted
+
 function maxSub(arr,num){
-    if(num > arr.length){
-      return null;
-    }
-  
-    var max = -Infinity
-  
-    for(let i=0; i < arr.length - num + 1; i++){
-      temp = 0;
-      for(let j=0; j < num; j++){
-        temp += arr[i+j];
-      }
-      if(temp > max){
-        max = temp;
-      }
-    }
-  
-  return max;
+  if(num > arr.length){
+    return null;
   }
+
+  var max = -Infinity
+
+  for(let i=0; i < arr.length - num + 1; i++){
+    temp = 0;
+    for(let j=0; j < num; j++){
+      //j < num means we want to look ahead by 3 elements
+      temp += arr[i+j];
+    }
+    if(temp > max){
+      max = temp;
+    }
+  }
+
+return max;
+}
+
+
 
 
   function maxSub(arr,num){
@@ -54,6 +59,10 @@ function maxSub(arr,num){
 
     return maxSum
   }
+
+  //this solution is better because instead of recounting all the digits in the array,
+  //we can simply subtract the first digit in the previous subarray and then add the next digital to it, which line 55 is doing.
+
 
 
   
