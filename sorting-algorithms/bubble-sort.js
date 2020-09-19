@@ -30,6 +30,8 @@ function bubbleSort(arr){
     let noSwaps;
 
     for(var i = arr.length; i > 0; i--){
+        // //outer loop starts at the end because we know that after each iteration in the nested loop, all the larger numbers will move to the end of the array.
+        //Then we can shrink the right side of this outer loop so that the inner loop can ignore the last index of the previous iteration
         noSwaps = true;
 
         for(var j = 0; j < i - 1; j++){
@@ -79,3 +81,35 @@ function bubbleSort(arr){
 
 
 //If array is nearly sorted, then Time Complexity is nearly O(N)....else O(N^2) due to nested loops
+
+
+
+//do-while loop
+function bubbleSort(arr){
+
+    if(arr.length <= 1) return arr;
+  
+    let swapped;
+  
+    do{
+      swapped = false;
+      for(i=0; i < arr.length; i++){
+  
+        if(arr[i] > arr[i + 1]){
+          let copyCurrentVal = arr[i]
+          arr[i] = arr[i+1]  //swap smaller number with bigger number
+          arr[i+1] = copyCurrentVal  //swap bigger number with smaller number
+          swapped = true;
+        }
+      }
+  
+    }while(swapped) //this will continue to stay truthy as long as we swap 2 values during the loop. If no swap was done then swapped variable is still false and while loop cancels, which means the array is sorted.
+  
+    return arr
+  }
+  
+  
+  let array = [6,3,9,5,2,1,10,4]
+  
+  
+  bubbleSort(array)
