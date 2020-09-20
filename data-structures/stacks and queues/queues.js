@@ -67,3 +67,20 @@ class Queue{
 
     }
 }
+
+
+let q = new Queue()
+
+q.push('red')
+q.push('black')
+q.push('green')
+q.push('gold')
+
+//[red, black, green, gold]
+
+q.shift() //red
+q.shift() //black
+
+q.push('blue')
+
+q.shift() //green
