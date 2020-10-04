@@ -39,10 +39,39 @@ function minSubArrayLen(arr,num){
           return 1
         }
       }
-      console.log(sum)
+
     }
   
   
     return min
   
+  }
+
+
+  //still working on this possible solution
+
+  function minSubArrayLen(arr,num){
+
+    if(arr.length < 1) return false;
+    if(arr.length == 1 && arr[0] >= num) return 1
+
+    let min = 0 
+    let current = 0
+    let count = 0
+
+    for(var i = 0; i < arr.length; i++){
+      if(arr[i] >= num) return 1
+
+      if(current >= num){
+        !min ? min = count : min = Math.min(min, count)
+        count = 0
+      }
+      else if(arr[i] < num){
+        current+= arr[i]
+        count++
+      }
+
+    }
+    return min
+
   }
