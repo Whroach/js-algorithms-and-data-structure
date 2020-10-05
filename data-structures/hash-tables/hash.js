@@ -86,3 +86,17 @@ Linear Probing
     Result: @Index 3 - ['cyan', '#00ffff']
 
 */
+
+
+
+/*
+
+let contacts = new Map()
+contacts.set('Jessie', {phone: "213-555-1234", address: "123 N 1st Ave"})
+contacts.has('Jessie') // true
+contacts.get('Jessie')
+contacts.set('Will', {phone: "100-000-1000", address: "My Addy 2"})
+
+contacts.get('Will')
+
+contacts.size*/
